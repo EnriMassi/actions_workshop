@@ -5,8 +5,8 @@ on:
     inputs:
       city:
         description: "City to show temperature of"
-        required: true
-        default: Brussels
+        default: 'Brussels'
+        required: true 
 
 jobs:
   print_temperature:
