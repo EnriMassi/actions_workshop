@@ -1,8 +1,8 @@
 name: Lint Python Code
 
 on: 
-  [push]
-  workflow-dispatch:
+  - push
+  - workflow-dispatch:
     inputs:
       version:
         description: "Check code consistency"
