@@ -1,0 +1,15 @@
+name: Count Python lines of code
+
+on: [push]
+
+jobs:
+  count-python-lines:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Counting
+      run: |
+        find . -name '*.py' | xargs wc -l
