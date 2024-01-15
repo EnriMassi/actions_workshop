@@ -1,12 +1,8 @@
 name: Lint Python Code
 
-on: 
-  - push:
-  - workflow-dispatch:
-    inputs:
-      version:
-        description: "Check code consistency"
-        required: true
+on:
+  workflow_dispatch:
+  push:
 
 jobs:
   run_python_linter:
