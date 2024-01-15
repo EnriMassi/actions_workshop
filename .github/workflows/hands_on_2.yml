@@ -1,6 +1,6 @@
 name: Lint Python Code
 
-on:
+on: 
   workflow_dispatch:
   push:
 
@@ -19,10 +19,8 @@ jobs:
       - name: Install dependencies
         run: cd app && pip install -r requirements.txt
 
-      # Add steps that allow this workflow to run a linter on the Python code in the app directory
-      - name: install pylint
+      - name: Install linter (PyLint)
         run: pip install pylint
 
-      - name: run pylint
+      - name: Lint Python code
         run: cd app && pylint *.py
-
