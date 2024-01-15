@@ -1,15 +1,13 @@
-name: Count Python Files in Repository
+name: count python code lines
 
 on: [push]
 
 jobs:
-  count-python-files:
+  Count_lines:
     runs-on: ubuntu-latest
+      steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Count files ending in .py
-      run: |
-        echo "Repository contains $(find . -name '*.py' | wc -l) Python files."
+      - name: counting
+        run: "find . -name '*.py' | xargs wc -l"
