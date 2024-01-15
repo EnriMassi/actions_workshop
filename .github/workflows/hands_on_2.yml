@@ -1,7 +1,7 @@
 name: Lint Python Code
 
 on: 
-  - push
+  - push:
   - workflow-dispatch:
     inputs:
       version:
