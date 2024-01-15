@@ -1,6 +1,12 @@
 name: Lint Python Code
 
-# Add the correct triggers for this workflow
+on: 
+  [push]
+  workflow-dispatch:
+    inputs:
+      version:
+        description: "Check code consistency"
+        required: true
 
 jobs:
   run_python_linter:
@@ -18,4 +24,9 @@ jobs:
         run: cd app && pip install -r requirements.txt
 
       # Add steps that allow this workflow to run a linter on the Python code in the app directory
+      - name: install pylint
+        run: pip install pylint
+
+      - name: run pylint
+        run: cd app && pylint *.py
 
